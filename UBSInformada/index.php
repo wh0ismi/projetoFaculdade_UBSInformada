@@ -14,7 +14,15 @@
         <nav class="light-blue darken-1">
             <div class ="nav-wrapper container">
                 <div class="left"><img src="imagens/logo.PNG" width=90 height=60></div>
-                <ul class="right">
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastro</a></li>
+                    <li><a href="consultas.php"><i class ="material-icons left">search</i>Consulta</a></li>
+                </ul>
+
+                <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="sidenav" id="mobile-nav">
                     <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastro</a></li>
                     <li><a href="consultas.php"><i class ="material-icons left">search</i>Consulta</a></li>
                 </ul>

@@ -32,6 +32,8 @@
         <div class ="row container">
             <p>&nbsp;</p>
             <fieldset class="formulario" style="padding: 80px">
+                <legend><img src="imagens/avatarPrancheta.png" width="140" height="140" /></legend>
+                <h4 class="light center">Histórico Beneficiário</h4>
                 <table class="responsive-table light center">
 
                     <thead>
@@ -43,11 +45,53 @@
                     </thead>
 
                     <tbody>
-                        <td class="col s2" for="idBeneficiario"></td>
-                        <td class="col s8" for="nomeCompleto"></td>
-                        <td class="col s2" for="cpf"></td>
+                    <td class="col s2" for="idBeneficiario"></td>
+                    <td class="col s8" for="nomeCompleto"></td>
+                    <td class="col s2" for="cpf"></td>
+                    </tbody>
+
+                    <thead>
+                        <tr>
+                            <td class="col s3">Data de Nascimento</td>
+                            <td class="col s6">E-mail</td>
+                            <td class="col s3">Telefone</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    <td class="col s3" for="dataNascimento"></td>
+                    <td class="col s6" for="email"></td>
+                    <td class="col s3" for="numeroContato"></td>
+                    </tbody>
+
+                    <thead>
+                        <tr>
+                            <td class="col s2">CEP</td>
+                            <td class="col s10">Endereço completo</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    <td class="col s4" for="cep"></td>
+                    <td class="col s8" for="enderecoCompleto"></td>
                     </tbody>
                 </table>
+
+                <div>
+                    <!-- Modal Trigger -->
+                    <button data-target="modal1" class="btn modal-trigger">Modal</button>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
         </div>
 

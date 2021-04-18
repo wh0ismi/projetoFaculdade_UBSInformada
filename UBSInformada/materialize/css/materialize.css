@@ -9,6 +9,10 @@
     border-radius: 10px;
 }
 
+.td {
+   color: #039be5; 
+}
+
 .materialize-red {
   background-color: #e51c23 !important;
 }

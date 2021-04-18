@@ -2,3 +2,6 @@
 
 include_once 'conexao.php';
 
+$querySelect
+
+

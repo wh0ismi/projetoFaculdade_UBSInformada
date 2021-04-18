@@ -101,7 +101,7 @@
         <!-- Inicialização do JQuery --> 
         <script type="text/javascript">
             $(document).ready(function () {
-
+                $('.sidenav').sidenav();
             });
         </script>
     </body>

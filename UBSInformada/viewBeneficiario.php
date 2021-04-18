@@ -31,35 +31,24 @@
 
         <div class ="row container">
             <p>&nbsp;</p>
-            <form action="dataBase/create.php" method="post" class="col s12">
-                <table class="responsive-table">
+            <fieldset class="formulario" style="padding: 80px">
+                <table class="responsive-table light center">
+
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Item Name</th>
-                            <th>Item Price</th>
+                            <td class="col s2">Id</td>
+                            <td class="col s8">Nome Completo</td>
+                            <td class="col s2">CPF</td>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>Alvin</td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
-                        </tr>
-                        <tr>
-                            <td>Alan</td>
-                            <td>Jellybean</td>
-                            <td>$3.76</td>
-                        </tr>
-                        <tr>
-                            <td>Jonathan</td>
-                            <td>Lollipop</td>
-                            <td>$7.00</td>
-                        </tr>
+                        <td class="col s2" for="idBeneficiario"></td>
+                        <td class="col s8" for="nomeCompleto"></td>
+                        <td class="col s2" for="cpf"></td>
                     </tbody>
                 </table>
-            </form>
+            </fieldset>
         </div>
 
         <!-- Importação JQuery e JavaScript --> 

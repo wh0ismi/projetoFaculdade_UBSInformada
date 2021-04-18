@@ -34,8 +34,8 @@
                         session_unset();
                     endif;
                     ?>
-
-                    <!-- label ndataAplicacao -->
+                   
+                    <!-- label dataAplicacao -->
                     <div class="input-field col s6">
                         <i class="material-icons prefix">date_range</i>
                         <input type="date" name="dataAplicacao" id="dataAplicacao" maxlength="100" required>

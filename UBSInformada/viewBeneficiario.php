@@ -1,5 +1,5 @@
 <?php session_start() ?>
-
+    
 <!DOCTYPE html>
 <html>
     <head>
@@ -76,7 +76,7 @@
                     <td class="col s8" for="enderecoCompleto"></td>
                     </tbody>
                 </table>
-
+                    
                 <div>
                     <!-- Modal Trigger -->
                     <button data-target="modal1" class="btn modal-trigger">Modal</button>
@@ -103,6 +103,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.sidenav').sidenav();
+                $('.modal').modal();
             });
         </script>
     </body>

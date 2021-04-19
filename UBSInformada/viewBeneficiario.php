@@ -37,70 +37,89 @@
             </nav>
         </div>
 
+        <?php
+        include_once 'dataBase/conexao.php';
+
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $_SESSION['id'] = $id;
+        $querySelect = $link->query("SELECT * FROM tb_beneficiario where id='$id'");
+
+        while ($registros = $querySelect->fetch_assoc()):
+            $nomeCompleto = $registros['nomeCompleto'];
+            $cpf = $registros['cpf'];
+            $dataNascimento = $registros['dataNascimento'];
+            $email = $registros['email'];
+            $numeroContato = $registros['numeroContato'];
+            $enderecoCompleto = $registros['enderecoCompleto'];
+            $cep = $registros['cep'];
+        endwhile;
+        ?>    
+
+        <?php
+        if (isset($_SESSION['msg'])):
+            echo $_SESSION['msg'];
+            session_unset();
+        endif;
+        ?>
+
         <div class ="row container">
-            <p>&nbsp;</p>
-            <fieldset class="formulario" style="padding: 80px">
-                <legend><img src="imagens/avatarPrancheta.png" width="140" height="140" /></legend>
-                <h4 class="light center">Histórico Beneficiário</h4>
-                <table class="responsive-table light center">
+            <div class="col s12">
+                <p>&nbsp;</p>
+                <form action="./dataBase/readBeneficiario.php" method="post" class="col s12">
+                    <fieldset class="formulario" style="padding: 80px">
+                        <legend><img src="imagens/avatarAtualizar.png" width="140" height="140" /></legend>
+                        <h4 class="light center">Histórico do Beneficiário</h4>
 
-                    <thead>
-                        <tr>
-                            <td class="col s2">Id</td>
-                            <td class="col s8">Nome Completo</td>
-                            <td class="col s2">CPF</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                    <td class="col s2" for="idBeneficiario"></td>
-                    <td class="col s8" for="nomeCompleto"></td>
-                    <td class="col s2" for="cpf"></td>
-                    </tbody>
-
-                    <thead>
-                        <tr>
-                            <td class="col s3">Data de Nascimento</td>
-                            <td class="col s6">E-mail</td>
-                            <td class="col s3">Telefone</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                    <td class="col s3" for="dataNascimento"></td>
-                    <td class="col s6" for="email"></td>
-                    <td class="col s3" for="numeroContato"></td>
-                    </tbody>
-
-                    <thead>
-                        <tr>
-                            <td class="col s2">CEP</td>
-                            <td class="col s10">Endereço completo</td>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                    <td class="col s4" for="cep"></td>
-                    <td class="col s8" for="enderecoCompleto"></td>
-                    </tbody>
-                </table>
-
-                <div>
-                    <!-- Modal Trigger -->
-                    <button data-target="modal1" class="btn modal-trigger">Modal</button>
-
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4>Modal Header</h4>
-                            <p>A bunch of text</p>
+                        <!-- label nome completo -->
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">person</i>
+                            <input type="text" name="nomeCompleto" id="nomeCompleto" value="<?php echo $nomeCompleto ?>" maxlength="100" readonly>
+                            <label for="nomeCompleto">Nome Completo</label>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        <!-- label cpf -->
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">subtitles</i>
+                            <input type="text" name="cpf" id="cpf" value="<?php echo $cpf ?>" maxlength="11" readonly>
+                            <label for="cpf">CPF</label>
                         </div>
-                    </div>
-                </div>
-            </fieldset>
+                        <!-- label dataNascimento -->
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">date_range</i>
+                            <input type="date" name="dataNascimento" id="dataNascimento" value="<?php echo $dataNascimento ?>" readonly>
+                            <label for="dataNascimento">Data de Nascimento</label>
+                        </div>
+                        <!-- label email -->
+                        <div class="input-field col s8">
+                            <i class="material-icons prefix">email</i>
+                            <input type="email" name="email" id="email" value="<?php echo $email ?>" maxlength="50" readonly>
+                            <label for="email">E-mail</label>
+                        </div>
+                        <!-- label numeroContato -->
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">contact_phone</i>
+                            <input type="tel" name="numeroContato" id="numeroContato" value="<?php echo $numeroContato ?>" maxlength="20" readonly>
+                            <label for="numeroContato">Telefone</label>
+                        </div>
+                        <!-- label cep -->
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">near_me</i>
+                            <input type="text" name="cep" id="cep" value="<?php echo $cep ?>" maxlength="10" readonly>
+                            <label for="cep">CEP</label>
+                        </div>
+                        <!-- label enderecoComplero -->
+                        <div class="input-field col s8">
+                            <i class="material-icons prefix">person_pin_circle</i>
+                            <input type="text" name="enderecoCompleto" id="enderecoCompleto" value="<?php echo $enderecoCompleto ?>" maxlength="100" readonly>
+                            <label for="enderecoComplero">Endereço</label>
+                        </div>
+                        <!-- botões -->
+                        <div class="center input-field col s12">
+                            <input type="submit" value="atualizar" class="btn light-blue darken-1">
+                            <a href="consultas.php" class="btn green">voltar</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
 
         <!-- Importação JQuery e JavaScript --> 
@@ -111,7 +130,6 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.sidenav').sidenav();
-                $('.modal').modal();
             });
         </script>
     </body>

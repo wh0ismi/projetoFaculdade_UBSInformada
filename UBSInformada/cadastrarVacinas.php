@@ -39,7 +39,7 @@
 
         <div class ="row container">
             <p>&nbsp;</p>
-            <form action="dataBase/create.php" method="post" class="col s12">
+            <form action="dataBase/createVacina.php" method="post" class="col s12">
                 <fieldset class="formulario" style="padding: 80px">
                     <legend><img src="imagens/avatarVacina.jpg" width="140" height="140" /></legend>
                     <h4 class="light center">Registrar Aplicação de Vacina</h4>

@@ -145,10 +145,9 @@
                             <table class="responsive-table light center">
                                 <thead>
                                     <tr>
-                                        <th>Data Emissão</th>
+                                        <th>Dt Emissão</th>
                                         <th>Beneficiário</th>
-                                        <th>Unidade de Saúde</th>
-                                        <th>Nome Médico</th>
+                                        <th>Unid. de Saúde</th>
                                         <th>CRM</th>
                                         <th>Qtd. Afastado</th>
                                         <th>Data Inicio</th>
@@ -171,12 +170,11 @@
                             <table class="responsive-table light center">
                                 <thead>
                                     <tr>
-                                        <th>Data Emissão</th>
+                                        <th>Dt. Emissão</th>
                                         <th>Beneficiário</th>
-                                        <th>Unidade de Saúde</th>
+                                        <th>Unid. de Saúde</th>
                                         <th>Nome Médico</th>
                                         <th>CRM</th>
-                                        <th>Prescrição Médica</th>
                                     </tr>
                                 </thead>
                                 <tbody>

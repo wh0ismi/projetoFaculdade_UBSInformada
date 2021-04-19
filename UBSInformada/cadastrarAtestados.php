@@ -33,7 +33,7 @@
 
         <div class ="row container">
             <p>&nbsp;</p>
-            <form action="dataBase/createReceituarios.php" method="post" class="col s12">
+            <form action="dataBase/createAtestados.php" method="post" class="col s12">
                 <fieldset class="formulario" style="padding: 80px">
                     <legend><img src="imagens/avatarDocumento.png" width="140" height="140" /></legend>
                     <h4 class="light center">Registrar Atestados e Declarações</h4>
@@ -46,7 +46,7 @@
                     ?>
                     <!-- label dataEmissao -->
                     <div class="input-field col s4">
-                        <i class="material-icons prefix">info_outline</i>
+                        <i class="material-icons prefix">date_range</i>
                         <input type="date" name="dataEmissao" id="dataEmissao" maxlength="10" required>
                         <label for="dataEmissao">Data Emissão</label>
                     </div>
@@ -61,7 +61,7 @@
                         <i class="material-icons prefix">info_outline</i>
                         <input type="text" name="unidadeSaude" id="unidadeSaude" maxlength="100" required>
                         <label for="unidadeSaude">Unidade de Saúde</label>
-                    </div>
+                    </div>                 
                     <!-- label nome médico -->
                     <div class="input-field col s8">
                         <i class="material-icons prefix">assignment_ind</i>
@@ -74,11 +74,36 @@
                         <input type="text" name="crm" id="crm" maxlength="10" required>
                         <label for="crm">CRM</label>
                     </div>
+                    <!-- label afastado por mais de um dia? -->
+                    <div class="input-field col s6">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Afastamento de 1d ou mais?</span>
+                        </label>
+                    </div>   
+                    <!-- label diasAfastados -->
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">info_outline</i>
+                        <input type="number" name="diasAfastados" id="diasAfastados" maxlength="10" required>
+                        <label for="diasAfastados">Qtd. Dias Afastados</label>
+                    </div> 
+                    <!-- label dataInicio -->
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="date" name="dataInicio" id="dataInicio" maxlength="10" required>
+                        <label for="dataInicio">Início</label>
+                    </div> 
+                    <!-- label dataFinal -->
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="date" name="dataFinal" id="dataFinal" maxlength="10" required>
+                        <label for="dataFinal">Término</label>
+                    </div>                     
                     <!-- label areaPrescricao -->
                     <div class="input-field col s12">
                         <i class="material-icons prefix">info_outline</i>
-                        <textarea name="areaPrescricao" id="areaPrescricao" class="materialize-textarea" data-length="600"></textarea>
-                        <label for="areaPrescricao">Declaro para os devidos fins..</label>
+                        <textarea name="areaCiencia" id="areaCiencia" class="materialize-textarea" data-length="600"></textarea>
+                        <label for="areaCiencia">Declaro para os devidos fins..</label>
                     </div>
                     <!-- botões -->
                     <div class="center input-field col s12">
@@ -98,7 +123,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.sidenav').sidenav();
-                $('input#input_text, textarea#areaPrescricao').characterCounter();
+                $('input#input_text, textarea#areaCiencia').characterCounter();
             });
         </script>
     </body>

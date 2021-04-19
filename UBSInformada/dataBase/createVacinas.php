@@ -22,7 +22,7 @@ $queryInsert = $link->query("insert into tb_vacinas values(default,
 
     if($affect_rows > 0):
         $_SESSION['msg'] = "<p class='center green-text'>".'Registro inserido com sucesso.'."</p>";
-    header ("Location:../cadastrarVacinas.php");
+        header ("Location:../cadastrarVacinas.php");
     else:
         $_SESSION['msg'] = "<p class='center green-text'>".'Inserção não realizada'."</p>";
     endif;

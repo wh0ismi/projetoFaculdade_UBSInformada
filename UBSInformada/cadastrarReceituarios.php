@@ -36,7 +36,7 @@
             <form action="dataBase/createReceituarios.php" method="post" class="col s12">
                 <fieldset class="formulario" style="padding: 80px">
                     <legend><img src="imagens/avatarDocumento.png" width="140" height="140" /></legend>
-                    <h4 class="light center">Registrar Atestados e Declarações</h4>
+                    <h4 class="light center">Registrar Prescrição Médica</h4>
 
                     <?php
                     if (isset($_SESSION['msg'])):
@@ -46,9 +46,9 @@
                     ?>
                     <!-- label dataEmissao -->
                     <div class="input-field col s4">
-                        <i class="material-icons prefix">info_outline</i>
-                        <input type="date" name="dataHoje" id="dataHoje" maxlength="10" required>
-                        <label for="dataHoje">Data Emissão</label>
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="date" name="dataEmissao" id="dataEmissao" maxlength="10" required>
+                        <label for="dataEmissao">Data Emissão</label>
                     </div>
                     <!-- label idBeneficiario -->
                     <div class="input-field col s3">

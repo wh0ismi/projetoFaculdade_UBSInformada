@@ -11,4 +11,4 @@ Para o desenvolvimento deste projeto, utilizaremos:
 - Materialize;
 - MySQL;
 
-A ideia inicial consiste no desenvolvimento de um CRUD, com a visão admin, onde esse poderá inserir novos beneficiários, fazer a consulta, visualização, atualização e exclusão desse personagem, além de inserir novos registros de vacinação, atestados e declarações médicas e prescrição médica. 
+A ideia inicial consiste no desenvolvimento de um CRUD, com a visão admin, onde esse poderá inserir novos beneficiários, fazer a consulta, visualização, atualização e exclusão desse personagem, além de inserir novos registros de atestados e declarações médicas, vacinação e prescrição médica. 

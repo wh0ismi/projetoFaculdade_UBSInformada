@@ -12,51 +12,63 @@
     <body>
 
         <div class="navbar-fixed">
-            <nav class="light-blue darken-1 navbar-fixed">
+            <nav class="light-blue darken-1">
                 <div class ="nav-wrapper container">
                     <div class="left"><img src="imagens/logo.PNG" width=90 height=60></div>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastro</a></li>
-                        <li><a href="consultas.php"><i class ="material-icons left">search</i>Consulta</a></li>
+                        <li><a href="index.php"><i class ="material-icons left">account_box</i>index</a></li>
+                        <li><a href="consultas.php"><i class ="material-icons left">search</i>consul bene</a></li>
+                        <li><a href="cadastrarVacinas.php"><i class ="material-icons left">search</i>cad vacinas</a></li>   
+                        <li><a href="editar.php"><i class ="material-icons left">search</i>edi</a></li>
+                        <li><a href="viewBeneficiario.php"><i class ="material-icons left">sea</i></a></li>
                     </ul>
 
                     <a href="#" class="sidenav-trigger" data-target="mobile-nav">
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="sidenav" id="mobile-nav">
-                        <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastro</a></li>
-                        <li><a href="consultas.php"><i class ="material-icons left">search</i>Consulta</a></li>
+                        <li><a href="index.php"><i class ="material-icons left">account_box</i>index</a></li>
+                        <li><a href="consultas.php"><i class ="material-icons left">search</i>consul bene</a></li>
+                        <li><a href="cadastrarVacinas.php"><i class ="material-icons left">search</i>cad vacinas</a></li>   
+                        <li><a href="editar.php"><i class ="material-icons left">search</i>edi</a></li>
+                        <li><a href="viewBeneficiario.php"><i class ="material-icons left">sea</i></a></li>
                     </ul>
                 </div>
             </nav>
         </div>
 
+        <?php
+        include_once 'dataBase/conexao.php';
+
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+        $_SESSION['id'] = $id;
+        $querySelect = $link->query("SELECT * FROM tb_beneficiario where id='$id'");
+
+        while ($registros = $querySelect->fetch_assoc()):
+            $nomeCompleto = $registros['nomeCompleto'];
+            $cpf = $registros['cpf'];
+            $dataNascimento = $registros['dataNascimento'];
+            $email = $registros['email'];
+            $numeroContato = $registros['numeroContato'];
+            $enderecoCompleto = $registros['enderecoCompleto'];
+            $cep = $registros['cep'];
+        endwhile;
+        ?>    
+
+        <?php
+        if (isset($_SESSION['msg'])):
+            echo $_SESSION['msg'];
+            session_unset();
+        endif;
+        ?>
+
         <div class ="row container">
             <div class="col s12">
                 <p>&nbsp;</p>
-                <form action="dataBase/update.php" method="post" class="col s12">
+                <form action="./dataBase/update.php" method="post" class="col s12">
                     <fieldset class="formulario" style="padding: 80px">
                         <legend><img src="imagens/avatarAtualizar.png" width="140" height="140" /></legend>
                         <h4 class="light center">Atualização de Dados do Beneficiário</h4>
-
-                        <?php
-                        include_once 'dataBase/conexao.php';
-
-                        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-                        $_SESSION['id'] = $id;
-                        $querySelect = $link->query("SELECT * FROM tb_beneficiario where id='$id'");
-
-                        while ($registros = $querySelect->fetch_assoc()):
-                            $id = $registros['id'];
-                            $nomeCompleto = $registros['nomeCompleto'];
-                            $cpf = $registros['cpf'];
-                            $dataNascimento = $registros['dataNascimento'];
-                            $email = $registros['email'];
-                            $numeroContato = $registros['numeroContato'];
-                            $enderecoCompleto = $registros['enderecoCompleto'];
-                            $cep = $registros['cep'];
-                        endwhile;
-                        ?>
 
                         <!-- label nome completo -->
                         <div class="input-field col s12">
@@ -73,7 +85,7 @@
                         <!-- label dataNascimento -->
                         <div class="input-field col s6">
                             <i class="material-icons prefix">date_range</i>
-                            <input type="date" name="dataNascimento" id="dataNascimento" value="<?php echo $dataNascimento ?>" maxlength="10" required>
+                            <input type="date" name="dataNascimento" id="dataNascimento" value="<?php echo $dataNascimento ?>" required>
                             <label for="dataNascimento">Data de Nascimento</label>
                         </div>
                         <!-- label email -->
@@ -103,7 +115,7 @@
                         <!-- botões -->
                         <div class="center input-field col s12">
                             <input type="submit" value="atualizar" class="btn light-blue darken-1">
-                            <input type="reset" value="limpar" class="btn red darken-1">
+                            <a href="consultas.php" class="btn green">voltar</a>
                         </div>
                     </fieldset>
                 </form>

@@ -10,8 +10,8 @@ while($registros = $querySelect->fetch_assoc()):
     echo "<tr>";
     echo "<td>$id</td><td>$nomeCompleto</td><td>$cpf</td>";
     echo "<td><a href='viewBeneficiario.php?id=$id'><i class='material-icons'>add</i></a></td>";
-    echo "<td><a href='editar.php?id=$id'><i class='material-icons'>edit</i></a></td>";     
-    echo "<td><a href='viewBeneficiario.php?id=$id'><i class='material-icons'>delete_forever</i></td>";
+    echo "<td><a href='editar.php?id=$id'><i class='material-icons'>edit</i></a></td>";
+    echo "<td><a href='delete.php?id=$id'><i class='material-icons'>delete</i></a></td>";     
     echo "</tr>";
  
 endwhile;

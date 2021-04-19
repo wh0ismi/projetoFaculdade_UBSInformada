@@ -11,23 +11,31 @@
     </head>
     <body>
 
-        <nav class="light-blue darken-1">
-            <div class ="nav-wrapper container">
-                <div class="left"><img src="imagens/logo.PNG" width=90 height=60></div>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastro</a></li>
-                    <li><a href="consultas.php"><i class ="material-icons left">search</i>Consulta</a></li>
-                </ul>
+        <div class="navbar-fixed">
+            <nav class="light-blue darken-1">
+                <div class ="nav-wrapper container">
+                    <div class="left"><img src="imagens/logo.PNG" width=90 height=60></div>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.php"><i class ="material-icons left">account_box</i>index</a></li>
+                        <li><a href="consultas.php"><i class ="material-icons left">search</i>consul bene</a></li>
+                        <li><a href="cadastrarVacinas.php"><i class ="material-icons left">search</i>cad vacinas</a></li>   
+                        <li><a href="editar.php"><i class ="material-icons left">search</i>edi</a></li>
+                        <li><a href="viewBeneficiario.php"><i class ="material-icons left">sea</i></a></li>
+                    </ul>
 
-                <a href="#" class="sidenav-trigger" data-target="mobile-nav">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul class="sidenav" id="mobile-nav">
-                    <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastro</a></li>
-                    <li><a href="consultas.php"><i class ="material-icons left">search</i>Consulta</a></li>
-                </ul>
-            </div>
-        </nav>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="sidenav" id="mobile-nav">
+                        <li><a href="index.php"><i class ="material-icons left">account_box</i>index</a></li>
+                        <li><a href="consultas.php"><i class ="material-icons left">search</i>consul bene</a></li>
+                        <li><a href="cadastrarVacinas.php"><i class ="material-icons left">search</i>cad vacinas</a></li>   
+                        <li><a href="editar.php"><i class ="material-icons left">search</i>edi</a></li>
+                        <li><a href="viewBeneficiario.php"><i class ="material-icons left">sea</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <div class ="row container">
             <div class="col s12">

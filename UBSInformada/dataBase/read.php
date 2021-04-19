@@ -11,7 +11,7 @@ while($registros = $querySelect->fetch_assoc()):
     echo "<td>$id</td><td>$nomeCompleto</td><td>$cpf</td>";
     echo "<td><a href='viewBeneficiario.php?id=$id'><i class='material-icons'>add</i></a></td>";
     echo "<td><a href='editar.php?id=$id'><i class='material-icons'>edit</i></a></td>";
-    echo "<td><a href='delete.php?id=$id'><i class='material-icons'>delete</i></a></td>";     
+    echo "<td><a href='dataBase/delete.php?id=$id'><i class='material-icons'>delete</i></a></td>";     
     echo "</tr>";
  
 endwhile;

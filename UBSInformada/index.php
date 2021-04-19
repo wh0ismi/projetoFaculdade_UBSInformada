@@ -16,22 +16,16 @@
                 <div class ="nav-wrapper container">
                     <div class="left"><img src="imagens/logo.PNG" width=90 height=60></div>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.php"><i class ="material-icons left">account_box</i>index</a></li>
-                        <li><a href="consultas.php"><i class ="material-icons left">search</i>consul bene</a></li>
-                        <li><a href="cadastrarVacinas.php"><i class ="material-icons left">search</i>cad vacinas</a></li>   
-                        <li><a href="editar.php"><i class ="material-icons left">search</i>edi</a></li>
-                        <li><a href="viewBeneficiario.php"><i class ="material-icons left">sea</i></a></li>
+                        <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastrar</a></li>
+                        <li><a href="consultaBeneficiarios.php"><i class ="material-icons left">search</i>Consultar</a></li>
                     </ul>
 
                     <a href="#" class="sidenav-trigger" data-target="mobile-nav">
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="sidenav" id="mobile-nav">
-                        <li><a href="index.php"><i class ="material-icons left">account_box</i>index</a></li>
-                        <li><a href="consultas.php"><i class ="material-icons left">search</i>consul bene</a></li>
-                        <li><a href="cadastrarVacinas.php"><i class ="material-icons left">search</i>cad vacinas</a></li>   
-                        <li><a href="editar.php"><i class ="material-icons left">search</i>edi</a></li>
-                        <li><a href="viewBeneficiario.php"><i class ="material-icons left">sea</i></a></li>
+                        <li><a href="index.php"><i class ="material-icons left">account_box</i>Cadastrar</a></li>
+                        <li><a href="consultaBeneficiarios.php"><i class ="material-icons left">search</i>Consultar</a></li>
                     </ul>
                 </div>
             </nav>
@@ -40,7 +34,7 @@
         <div class ="row container">
             <div class="col s12">
                 <p>&nbsp;</p>
-                <form action="dataBase/create.php" method="post" class="col s12">
+                <form action="dataBase/createBeneficiarios.php" method="post" class="col s12">
                     <fieldset class="formulario" style="padding: 80px">
                         <legend><img src="imagens/avatarBeneficiario.png" width="140" height="140" /></legend>
                         <h4 class="light center">Cadastro de Beneficiário</h4>
@@ -79,7 +73,7 @@
                         <!-- label numeroContato -->
                         <div class="input-field col s4">
                             <i class="material-icons prefix">contact_phone</i>
-                            <input type="tel" name="numeroContato" id="numeroContato" maxlength="20" required>
+                            <input type="text" name="numeroContato" id="numeroContato" maxlength="20" required>
                             <label for="numeroContato">Telefone</label>
                         </div>
                         <!-- label cep -->

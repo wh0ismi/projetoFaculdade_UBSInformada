@@ -10,7 +10,7 @@ $numeroContato = filter_input(INPUT_POST, 'numeroContato', FILTER_SANITIZE_SPECI
 $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_SPECIAL_CHARS);
 $enderecoCompleto = filter_input(INPUT_POST, 'enderecoCompleto', FILTER_SANITIZE_SPECIAL_CHARS);
 
-$querySelect = $link->query("select cpf from tb_beneficiario");
+$querySelect = $link->query("select cpf from tb_beneficiarios");
 $array_cpfs = [];
 
 while ($cpfs = $querySelect->fetch_assoc()):
@@ -22,7 +22,7 @@ if (in_array($cpf, $array_cpfs)):
     $_SESSION['msg'] = "<p class='center red-text'>".'Já existe um cadastro com esse CPF.'."</p>";
     header("Location:../");
 else: 
-    $queryInsert = $link->query("insert into tb_beneficiario values(default,
+    $queryInsert = $link->query("insert into tb_beneficiarios values(default,
                                                                     '$nomeCompleto',
                                                                     '$cpf',
                                                                     '$dataNascimento',
@@ -34,6 +34,6 @@ else:
     
     if($affect_rows > 0):
         $_SESSION['msg'] = "<p class='center green-text'>".'Cadastro realizado com sucesso.'."</p>";
-    header ("Location:../consultas.php");
+    header ("Location:../consultaBeneficiarios.php");
     endif;
 endif;
